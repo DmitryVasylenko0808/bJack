@@ -26,7 +26,7 @@ class Game {
         this.playersObj.createPlayers(countPlayers);
 
         let count = 0;
-        while(count < 3) {
+        while(count < countPlayers) {
             this.playersObj.nextPlayer();
             this.renderUI.renderPlayer();
             count++;
