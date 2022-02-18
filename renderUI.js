@@ -4,11 +4,11 @@ class RenderUI {
         this.playerBlock = null;
         this.playerName = null;
         this.points = null;
+        this.status = document.querySelector('.status');
 
         this.playersRender = playesRender;
     }
     
-
     renderPlayer() {
         this.playersArea = document.querySelector('.players');
         this.playerBlock = document.createElement('div');
@@ -77,5 +77,26 @@ class RenderUI {
 
         let points = currPlayerBlock[index].querySelector('p');
         points.textContent = this.playersRender.currentPlayer.points; 
+    }
+
+    showStatus(booleanStatus, winnerPlayer) {
+        if (booleanStatus === false) {
+            this.status.textContent = `${this.playersRender.currentPlayer.name} lost`;
+        }
+        else {
+            this.status.textContent = `${winnerPlayer.name} win!`;
+        }
+    }
+
+    deletePlayers() {
+        let elems = document.querySelectorAll('.player');
+
+        for(let elem of elems) {
+            elem.remove();
+        }
+    }
+
+    clearStatus() {
+        this.status.textContent = '';
     }
 }

@@ -12,6 +12,10 @@ body {
     text-align:center;
 }
 
+.players-count {
+    display: inline-block;
+}
+
 .btn {
     border: solid 1px black;
     border-radius:10px;

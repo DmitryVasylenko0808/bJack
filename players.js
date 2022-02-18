@@ -27,7 +27,6 @@ class Players {
         
         this.indexCurrentPlayer = this.indexNextPlayer++;
         this.currentPlayer = this.players[this.indexCurrentPlayer];
-        this.players[this.indexCurrentPlayer];
     }
 
     setCard(card) {
@@ -44,11 +43,5 @@ class Players {
         this.players[numberPlayer].points = points;
         
         return this.players[numberPlayer].points; 
-    }
-
-    resetPlayers() {
-        this.indexCurrentPlayer = 0;
-        this.indexNextPlayer = 0;
-        this.currentPlayer = this.players[this.indexCurrentPlayer];
     }
 }
