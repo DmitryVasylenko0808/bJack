@@ -88,6 +88,12 @@ class RenderUI {
         }
     }
 
+    getCountPlayers() {
+        let countPlayersElem = document.querySelectorAll('.players-count');
+        let countPlayers = countPlayersElem[1].value;
+        return countPlayers;
+    }
+
     deletePlayers() {
         let elems = document.querySelectorAll('.player');
 

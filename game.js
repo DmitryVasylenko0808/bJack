@@ -21,8 +21,7 @@ class Game {
         this.deckObj.createDeck();
         this.deckObj.shuffleDeck();
 
-        let countPlayersElem = document.querySelectorAll('.players-count');
-        let countPlayers = countPlayersElem[1].value;
+        let countPlayers = this.renderUI.getCountPlayers();
         this.playersObj.createPlayers(countPlayers);
 
         let count = 0;
