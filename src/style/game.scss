@@ -1,0 +1,28 @@
+.main {
+    background: radial-gradient(rgb(59, 153, 59), rgb(8, 37, 7));
+}
+
+.game {
+    width: 1000px;
+    min-height: 1000px;
+
+    margin: 0 auto;
+
+    text-align:center;
+
+    h3 {
+        padding: 10px;
+    }
+}
+
+.input-count {
+    display: inline-block !important;
+}
+
+.game-body {
+    padding: 20px;
+}
+
+.game-options {
+    text-align: center;
+}

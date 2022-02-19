@@ -31,9 +31,9 @@ class RenderUI {
 
         if (index > 0) {
             let prev = index - 1;
-            currPlayerBlock[prev].classList.remove('active');
+            currPlayerBlock[prev].classList.remove('player-active');
         }
-        currPlayerBlock[index].classList.add('active');
+        currPlayerBlock[index].classList.add('player-active');
     }
 
     renderCard(cardPlayer) {
@@ -89,7 +89,7 @@ class RenderUI {
     }
 
     getCountPlayers() {
-        let countPlayersElem = document.querySelectorAll('.players-count');
+        let countPlayersElem = document.querySelectorAll('.input-count');
         let countPlayers = countPlayersElem[1].value;
         return countPlayers;
     }
