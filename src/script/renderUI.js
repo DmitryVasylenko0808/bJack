@@ -90,7 +90,7 @@ class RenderUI {
 
     getCountPlayers() {
         let countPlayersElem = document.querySelectorAll('.input-count');
-        let countPlayers = countPlayersElem[1].value;
+        let countPlayers = countPlayersElem[1].value; //!
         return countPlayers;
     }
 

@@ -1,12 +1,54 @@
-class Game {
-    constructor() {
+class Game extends React.Component {
+    constructor(props) {
+      super(props);
         this.isNowPlaying = false;
         this.gameStatus = false;
         this.deckObj = null;
         this.playersObj = null;
         this.renderUI = null;
+      
+      this.state = {countPlayers: ''};
+
+      this.handleChange = this.handleChange.bind(this);
+      this.handleClick = this.handleClick.bind(this);
+    }
+  
+    handleChange(event) {
+      this.setState({countPlayers: event.target.value});
     }
 
+    handleClick() {
+      //console.log(this.state.countPlayers);
+      return (
+        <Players />
+        );
+    }
+  
+    render() {
+      return (
+          <div className="game-body">
+            <div className="game-options">
+              <div>
+                <p className="input-count">Players:</p>
+                <input type="text" className="input-count" onChange={this.handleChange}/>
+                <div>
+                  <button className="btn" onClick={this.handleClick}>START</button>
+                  <input type="button" className="btn" value="HIT" />
+                  <input type="button" className="btn" value="STAY" />
+                </div>
+                </div>
+                <div className="status"></div>
+            </div> 
+          </div>
+      );
+    }
+  
+    /*clickStart() {
+      return (
+         <Players 
+           countPlayers={this.}/>);
+    }*/
+  
     initGame() {
         this.deckObj = new Deck;
         this.playersObj = new Players;
@@ -99,10 +141,15 @@ class Game {
     }
 }
 
-window.addEventListener('load', function() {
+/*window.addEventListener('load', function() {
     const game = new Game;
     let buttons = this.document.querySelectorAll('.btn');
     buttons[0].addEventListener('click', game.startGame.bind(game));
     buttons[1].addEventListener('click', game.hit.bind(game));
     buttons[2].addEventListener('click', game.stay.bind(game)); 
-});
+});*/
+
+ReactDOM.render(
+  <Game />,
+  document.getElementById('root')
+);

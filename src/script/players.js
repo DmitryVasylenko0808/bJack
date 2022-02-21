@@ -1,10 +1,30 @@
-class Players {
-    constructor() {
-        this.players = [];
-        this.currentPlayer = null;
+class Players extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        players: [],
+        currentPlayer: null,
 
-        this.indexCurrentPlayer = 0;
-        this.indexNextPlayer = 0;
+        indexCurrentPlayer: 0,
+        indexNextPlayer: 0
+      }
+    }
+  
+    render() {
+      //this.createPlayers(props.countPlayers);
+      console.log(1);
+      return (
+        <h1>12</h1>
+          );
+    }
+  
+    renderPlayer(i) {
+      return (
+         <div className="player">
+          <h2>{this.state.players[i].name}</h2>
+          <p>{this.state.players[i].points}</p>
+         </div>
+         );
     }
 
     createPlayers(count = 2) {
@@ -15,7 +35,7 @@ class Players {
                           points: 0,
                           handPlayer: hand,
                           status: true};
-            this.players.push(player);
+            this.state.players.push(player);
         }
     }
 
